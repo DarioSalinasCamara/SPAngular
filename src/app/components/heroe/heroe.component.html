@@ -1,0 +1,27 @@
+<h1>{{ heroe.nombre | uppercase }} <small> ({{ heroe.aparicion | date:'y' }})</small></h1>
+<hr>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <img [src]="heroe.img" class="img-fluid" [alt]="heroe.nombre">
+        <br><br>
+        <div class="d-grid">
+            <a [routerLink]="['/heroes']" class="btn btn-outline-danger">Volver</a>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+
+        <h3>{{ heroe.nombre }}</h3>
+        <hr>
+        <p>{{ heroe.bio }}</p>
+
+        @if(heroe.casa == 'DC'){
+            <img class="img-logo" src="assets/img/dc.png" alt=""> 
+        } 
+        @if(heroe.casa == 'Marvel'){
+            <img class="img-logo" src="assets/img/M2.png" alt=""> 
+        }
+
+    </div>
